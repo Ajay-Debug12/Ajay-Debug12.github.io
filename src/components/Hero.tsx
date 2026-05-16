@@ -39,8 +39,11 @@ export function Hero() {
               View Projects
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="px-5 md:px-6 py-3 rounded-md font-semibold border border-foreground/10 hover:bg-foreground/5 transition-all text-foreground text-sm md:text-base">
+            <a href="/Ajay_Resume.pdf" download="Ajay_Resume.pdf" className="px-5 md:px-6 py-3 rounded-md font-semibold border border-foreground/10 hover:bg-foreground/5 transition-all text-foreground text-sm md:text-base">
               Download Resume
+            </a>
+            <a href="/Ajay_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-5 md:px-6 py-3 rounded-md font-semibold border border-foreground/10 hover:bg-foreground/5 transition-all text-foreground text-sm md:text-base hidden sm:inline-flex">
+              View Resume
             </a>
             <a href="#contact" className="px-5 md:px-6 py-3 rounded-md font-semibold text-muted-foreground hover:text-foreground transition-all text-sm md:text-base">
               Contact Me

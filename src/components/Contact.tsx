@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Mail, Send, MapPin, Phone, Loader2 } from "lucide-react";
 import { useState, type FormEvent } from "react";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../lib/firebase";
 
 export function Contact() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -12,29 +14,21 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      // Using Web3Forms for email forwarding
-      // You can get your own access key from https://web3forms.com/
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({
-          access_key: "084f9b8c-5764-4e42-990a-289564883395", // This is a public key for testing, you should replace it with your own
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-          subject: `New Portfolio Message from ${formData.name}`,
-        }),
+      await addDoc(collection(db, "messages"), {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        createdAt: serverTimestamp(),
+        read: false
       });
 
-      const result = await response.json();
-      if (result.success) {
-        setSubmitted(true);
-        setFormData({ name: "", email: "", message: "" });
-        setTimeout(() => setSubmitted(false), 5000);
-      }
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+      
+      // Keep success state for 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("Something went wrong. Please try again later.");

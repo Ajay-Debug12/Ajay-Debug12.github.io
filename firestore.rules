@@ -1,0 +1,47 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper to check if user is an authorized admin
+    function isAuthorized() {
+      return request.auth != null && 
+        (
+          !exists(/databases/$(database)/documents/config/admin_settings) || 
+          request.auth.token.email in get(/databases/$(database)/documents/config/admin_settings).data.authorized_emails
+        );
+    }
+
+    // Projects, Experience, Skills, About - Publicly readable, Admin writable
+    match /projects/{document=**} {
+      allow read: if true;
+      allow write: if isAuthorized();
+    }
+    
+    match /experience/{document=**} {
+      allow read: if true;
+      allow write: if isAuthorized();
+    }
+    
+    match /skills/{document=**} {
+      allow read: if true;
+      allow write: if isAuthorized();
+    }
+    
+    match /about/{document=**} {
+      allow read: if true;
+      allow write: if isAuthorized();
+    }
+
+    // Messages - Publicly writable (for contact form), Admin readable/deletable
+    match /messages/{document=**} {
+      allow create: if true;
+      allow read, update, delete: if isAuthorized();
+    }
+
+    // Config - Only readable and writable by existing authorized users
+    match /config/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if isAuthorized();
+    }
+  }
+}
