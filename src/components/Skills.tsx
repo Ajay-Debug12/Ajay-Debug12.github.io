@@ -21,7 +21,6 @@ export function Skills() {
   };
 
   const [skills, setSkills] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const q = query(
@@ -33,7 +32,6 @@ export function Skills() {
         ...doc.data()
       }));
       setSkills(skillsData);
-      setLoading(false);
     });
     return () => unsubscribe();
   }, []);
