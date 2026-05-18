@@ -39,9 +39,16 @@ export function Projects() {
       icon: <BarChart3 className="w-5 h-5 text-emerald-400" />,
       projects: [
         {
+          title: "Supersale KPI Dashboard",
+          description: "Interactive Sales KPI Dashboard built in Microsoft Excel. Features multi-dimensional analysis of sales, profit, and regional performance using Pivot Tables, XLOOKUP, and advanced Conditional Formatting.",
+          image: "/project-supersale.png",
+          tech: ["Excel", "Pivot Tables", "XLOOKUP", "KPIs"],
+          github: "https://github.com/Ajay-Debug12/Supersale_KPI_dashboard",
+        },
+        {
           title: "Sales Engagement Dashboard",
           description: "Professional analytics suite visualizing multi-dimensional sales data. Features interactive slicers, KPI tracking, and trend analysis to drive data-informed business decisions.",
-          image: "/project-dashboard.png",
+          image: "/project-dashboard-v2.jpeg",
           tech: ["Excel", "Power Query", "Pivot Analysis", "KPIs"],
           github: "https://github.com/Ajay-Debug12/Sales-dashboard-",
         }
