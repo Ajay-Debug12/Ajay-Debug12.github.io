@@ -29,7 +29,7 @@ export function Skills() {
       title: "Data Analytics",
       description: "Transforming raw data into actionable insights through visualization, statistical analysis, and reporting.",
       icon: <BarChart3 className="w-7 h-7 md:w-8 md:h-8 text-emerald-400" />,
-      tags: ["Excel", "Pandas", "NumPy", "Pivot Tables", "Charts"],
+      tags: ["Excel", "Power BI", "Tableau", "Pandas", "NumPy", "Pivot Tables"],
       color: "from-emerald-400/20 hover:from-emerald-400/30"
     },
     {
