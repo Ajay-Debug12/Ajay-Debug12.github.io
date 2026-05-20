@@ -46,6 +46,13 @@ export function Projects() {
           github: "https://github.com/Ajay-Debug12/Supersale_KPI_dashboard",
         },
         {
+          title: "Customer Behavior Analysis",
+          description: "End-to-end EDA project using Python to analyze customer purchasing behavior and revenue drivers. Features seasonal trend analysis, customer segmentation, and actionable business insights.",
+          image: "/project-customer-behavior.png",
+          tech: ["Python", "Pandas", "Seaborn", "EDA"],
+          github: "https://github.com/Ajay-Debug12/customer_behavior_analysis",
+        },
+        {
           title: "Sales Engagement Dashboard",
           description: "Professional analytics suite visualizing multi-dimensional sales data. Features interactive slicers, KPI tracking, and trend analysis to drive data-informed business decisions.",
           image: "/project-dashboard-v2.jpeg",
