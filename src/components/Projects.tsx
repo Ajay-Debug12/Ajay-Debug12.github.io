@@ -39,6 +39,13 @@ export function Projects() {
       icon: <BarChart3 className="w-5 h-5 text-emerald-400" />,
       projects: [
         {
+          title: "HR Analytics Dashboard",
+          description: "Full-stack analytics suite identifying employee attrition patterns. Uses Excel for cleaning, MySQL for querying, Python for EDA, and Power BI to visualize key retention metrics and workforce demographics.",
+          image: "/project-hr-analytics.png",
+          tech: ["Power BI", "Python", "MySQL", "Excel"],
+          github: "https://github.com/Ajay-Debug12/hr_analytics",
+        },
+        {
           title: "Supersale KPI Dashboard",
           description: "Interactive Sales KPI Dashboard built in Microsoft Excel. Features multi-dimensional analysis of sales, profit, and regional performance using Pivot Tables, XLOOKUP, and advanced Conditional Formatting.",
           image: "/project-supersale.png",
