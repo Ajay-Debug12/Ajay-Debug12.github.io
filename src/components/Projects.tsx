@@ -82,10 +82,10 @@ export function Projects() {
           link: "https://luxepr.netlify.app/",
         },
         {
-          title: "Personal Goal Tracker",
-          description: "A specialized system software for objective tracking and performance metrics. Designed to optimize personal focus and goal attainment through structured data recording.",
-          image: "/project-portfolio.png", // Reusing this for now as a placeholder for the goal tracker
-          tech: ["TypeScript", "System Design", "Local Storage"],
+          title: "MyOS — Personal Life OS",
+          description: "A comprehensive cloud-based productivity ecosystem. Features integrated goal tracking, secure Google authentication, and a real-time persistent database for seamless life organization across devices.",
+          image: "/project-myos.png",
+          tech: ["React", "Firebase", "TypeScript", "Tailwind CSS"],
           github: "https://github.com/Ajay-Debug12",
         }
       ]
